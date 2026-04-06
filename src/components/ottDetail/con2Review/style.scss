@@ -1,0 +1,167 @@
+@use '../../../styles/utils' as *;
+@use '../../../styles/base' as *;
+
+//font-family:$font-sub
+
+.ottreview {
+    width: 100%;
+    background-color: $black;
+    .con2-inner {
+        padding-top: vw(100);
+        width: vw(1600);
+        // height: vw(782);
+        margin: 0 auto;
+        position: relative;
+        .review {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: vw(28);
+            strong {
+                @include font-30px-B;
+                color: $white;
+            }
+            span {
+                @include font-25px-SB;
+                color: $sub3;
+            }
+            .line {
+                width: vw(1430);
+                height: vw(1);
+                background-color: $white;
+            }
+        }
+        .reviewlist {
+            width: vw(1600);
+            // height: vw(436);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: vw(24);
+            .listbox {
+                width: vw(516);
+                // height: vw(206);
+                border-radius: vw(15);
+                border: vw(1) solid $white;
+                padding: vw(20) vw(28);
+                box-sizing: border-box;
+                .star {
+                    @include font-20px-M;
+                    color: $sub3;
+                }
+                .nick {
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    margin-bottom: vw(20);
+                    span {
+                        @include font-15px-R;
+                        color: $white;
+                        display: flex;
+                        padding: 0 vw(12);
+                        border-right: vw(1) solid $white;
+                        p {
+                            @include font-16px-B;
+                            color: $main2;
+                            margin-left: vw(4);
+                        }
+                        &:nth-child(1) {
+                            padding-left: 0;
+                        }
+                        &:nth-child(4),
+                        &:nth-child(5) {
+                            border: none;
+                        }
+                        &:nth-child(5) {
+                            margin-left: vw(-16);
+                        }
+                    }
+                    .heart {
+                        position: relative;
+                        color: $sub3;
+                        display: inline-flex;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: color 0.2s ease, transform 0.12s ease;
+                        margin-left: vw(8);
+                    }
+                    .heart.on {
+                        color: $sub3;
+                    }
+
+                    .heart:active {
+                        transform: scale(0.5);
+                    }
+                    .heart-burst {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%); // 아이콘 중앙에서 터지게
+                        pointer-events: none;
+                    }
+                    /* 🫧 개별 파티클 */
+                    .heart-burst i {
+                        position: absolute;
+                        font-style: normal;
+                        line-height: 1;
+                        font-size: vw(16); // 프로젝트 단위에 맞춰 조절
+                        color: $main2; // 파티클 색
+                        opacity: 0;
+                        transform: translate(0, 0) scale(0.6);
+                        animation: heart-burst var(--dur, 700ms) ease-out forwards;
+                        text-shadow: 0 0 vw(2) rgba(0, 0, 0, 0.15);
+                    }
+
+                    /* 이동을 CSS 변수로 받아서 끝점으로 날아가며 페이드아웃 */
+                    @keyframes heartBurstAnim {
+                        0% {
+                            transform: translate(-50%, -50%) scale(var(--scale, 1)) translate(0, 0);
+                            opacity: 1;
+                        }
+                        50% {
+                            transform: translate(-50%, -50%) scale(var(--scale, 1))
+                                translate(calc(var(--tx) * 0.7), calc(var(--ty) * 0.7));
+                            opacity: 0.8;
+                        }
+                        100% {
+                            transform: translate(-50%, -50%) scale(var(--scale, 1))
+                                translate(var(--tx), var(--ty));
+                            opacity: 0;
+                        }
+                    }
+                }
+                .desc {
+                    color: $white;
+                    strong {
+                        @include font-18px-SB;
+                    }
+                    p {
+                        @include font-15px-R;
+                        margin-top: vw(10);
+                        white-space: pre-line;
+                    }
+                }
+                .more {
+                    @include font-17px;
+                    color: $white;
+                    display: flex;
+                    justify-content: right;
+                    align-items: center;
+                    cursor: pointer;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .morebtn {
+            position: static;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button {
+                margin-top: vw(100);
+            }
+        }
+    }
+}

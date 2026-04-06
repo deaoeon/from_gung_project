@@ -1,0 +1,51 @@
+export default [
+    {
+        id: 1,
+        img: '/images/mainbest/con1_default1.png',
+        label: '경복궁 달빛기행',
+        text: 'ㄱ',
+        link: 1,
+    },
+    {
+        id: 2,
+        img: '/images/mainbest/con1_default2.png',
+        label: '경주 전통기행',
+        text: 'ㄴ',
+        link: 8,
+    },
+    {
+        id: 3,
+        img: '/images/mainbest/con1_default3.png',
+        label: '백제 로맨스',
+        text: 'ㄷ',
+        link: 20,
+    },
+    {
+        id: 4,
+        img: '/images/mainbest/con1_default4.png',
+        label: '예술과 파도의 강릉',
+        text: 'ㄹ',
+        link: 13,
+    },
+    {
+        id: 5,
+        img: '/images/mainbest/con1_default5.png',
+        label: '운현궁의 하루',
+        text: 'ㅁ',
+        link: 5,
+    },
+    {
+        id: 6,
+        img: '/images/mainbest/con1_default6.png',
+        label: '백제의 고도 공주',
+        text: 'ㅂ',
+        link: 18,
+    },
+    {
+        id: 7,
+        img: '/images/mainbest/con1_default7.png',
+        label: '송도 전통과 미래',
+        text: 'ㅅ',
+        link: 24,
+    },
+];

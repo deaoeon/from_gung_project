@@ -1,0 +1,446 @@
+@use '../../../styles/utils' as *;
+@use '../../../styles/base' as *;
+
+//font-family:$font-sub
+
+.detailvisual {
+    position: relative;
+    width: 100%;
+    height: vw(1000);
+    display: flex;
+    .grad {
+        width: 100%;
+        height: vw(320);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35.78%, #000 100%);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bg {
+        width: 100%;
+        height: 100%;
+        /* 기본 백업 이미지 */
+        background-image: url('/images/ott/ottdetail.png');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .left {
+        box-sizing: border-box;
+        width: vw(312);
+        height: vw(953);
+        margin-left: vw(60);
+        padding-top: vw(104);
+        display: flex;
+        flex-direction: column;
+        filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.6));
+
+        .episode {
+            display: flex;
+            justify-content: bottom;
+            align-items: center;
+            margin-bottom: 8px;
+            strong {
+                @include font-20px-SB;
+                color: $white;
+                margin-right: vw(4);
+            }
+            p {
+                @include font-15px-SB;
+                color: $white;
+            }
+        }
+
+        .episodeSwiper {
+            width: vw(312);
+            height: vw(804);
+            overflow: hidden;
+
+            .swiper-scrollbar {
+                background: rgba(255, 255, 255, 0.2);
+                width: vw(3);
+                height: vw(820);
+                right: 0;
+            }
+            .swiper-scrollbar-drag {
+                background: white;
+                border-radius: 999px;
+            }
+
+            .swiper-slide {
+                width: vw(260);
+                height: vw(200);
+
+                .lists {
+                    width: vw(260);
+                    height: vw(200);
+                    margin-bottom: vw(12);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: left;
+                    align-items: left;
+                    cursor: pointer;
+                    position: relative;
+
+                    .ep-thumb {
+                        aspect-ratio: 16 / 9;
+                        border-radius: vw(12);
+                        overflow: hidden;
+                        background: #7e7e7e;
+                        margin-bottom: vw(8);
+
+                        img {
+                            width: vw(260);
+                            height: vw(144);
+                            display: block;
+                            object-fit: cover;
+                            object-position: center;
+                            background: none;
+                        }
+                    }
+
+                    .icon img {
+                        width: vw(60);
+                        height: vw(60);
+                        position: absolute;
+                        top: vw(42);
+                        left: vw(100);
+                        opacity: 0;
+                        z-index: 2;
+                    }
+
+                    &:hover {
+                        .ep-thumb img {
+                            filter: brightness(0.5);
+                        }
+                        .icon img {
+                            opacity: 1;
+                        }
+                    }
+                    .point-badge {
+                        @include font-16px-SB;
+                        color: $white;
+                        background: $sub3;
+                        width: vw(30);
+                        height: vw(38);
+                        text-align: center;
+                        line-height: vw(38);
+                        position: absolute;
+                        border-radius: 0 0 vw(5) vw(5);
+                        top: 0;
+                        right: vw(25);
+                    }
+
+                    strong {
+                        @include font-20px-SB;
+                        color: $white;
+                        display: flex;
+
+                        span {
+                            min-width: 0;
+                            @include font-20px-SB;
+                            color: $white;
+                            margin-left: vw(8);
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    .date {
+                        display: flex;
+                        justify-content: right;
+                        align-items: center;
+                        p {
+                            @include font-14px;
+                            color: $white;
+                            margin-left: vw(10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .title-area {
+        width: vw(600);
+        height: vw(700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: vw(150);
+        margin-left: vw(140);
+        .title {
+            width: vw(598);
+            height: auto;
+            position: absolute;
+            filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.6));
+            margin: auto;
+
+            .con1 {
+                color: $white;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+                gap: vw(8);
+                margin-bottom: vw(8);
+                /* ⭐ 평점 별: 가로 정렬 보장 */
+                .star {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: vw(6);
+                    margin: 0;
+
+                    p {
+                        @include font-24px-R;
+                        line-height: 1;
+                        margin: 0;
+
+                        display: inline-flex; /* ← 세로정렬 방지 */
+                        align-items: center;
+                        gap: vw(2);
+                    }
+                    span {
+                        @include font-20px;
+                        margin-right: vw(10);
+                    }
+                }
+
+                /* 💗 찜(하트) */
+                .wish {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+
+                    svg {
+                        transition: transform 0.2s ease, color 0.2s ease;
+                    }
+                    &.on svg {
+                        transform: scale(1.06);
+                        color: #ff5a79;
+                    }
+                    &:active svg {
+                        transform: scale(0.92);
+                    }
+
+                    /* 파티클 컨테이너 */
+                    .burst {
+                        position: absolute;
+                        inset: 0;
+                        pointer-events: none;
+                        z-index: 2;
+                    }
+                    .burst .particle {
+                        --dx: 0px;
+                        --dy: -40px;
+                        --rot: 0deg;
+                        --delay: 0s;
+                        --scale: 1;
+
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        animation: heart-burst 0.7s ease-out forwards;
+                        animation-delay: var(--delay);
+
+                        svg {
+                            transform: rotate(var(--rot)) scale(var(--scale));
+                            color: #ff5a79;
+                            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+                        }
+                    }
+                }
+
+                .share {
+                    @include font-20px;
+                }
+                em {
+                    @include font-17px;
+                }
+            }
+
+            .con2 {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                margin-bottom: vw(20);
+
+                strong {
+                    @include font-20px-M;
+                    background-color: $sub4;
+                    color: $white;
+                    border-radius: vw(5);
+                    width: vw(30);
+                    height: vw(30);
+                    text-align: center;
+                    line-height: vw(30);
+                }
+                p {
+                    @include font-16px;
+                    color: $white;
+                    border-right: vw(1) solid $white;
+                    padding: 0 vw(10);
+                    margin: 0;
+                    line-height: vw(20);
+                    height: vw(20);
+
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+
+            .title-logo {
+                // width: auto;
+                // height: vw(200);
+                width: vw(400);
+                height: auto;
+                object-fit: contain;
+                display: block;
+
+                margin: vw(30) 0;
+            }
+
+            .cast {
+                display: flex;
+                color: $white;
+                margin-bottom: vw(12);
+                strong {
+                    @include font-20px-R;
+                    margin-right: vw(20);
+                }
+                span {
+                    @include font-20px-R;
+                    margin-right: vw(4);
+                }
+            }
+
+            .desc {
+                @include font-20px-R;
+                color: $white;
+                margin-bottom: vw(20);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                word-break: keep-all;
+            }
+
+            .price {
+                color: $white;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                margin-bottom: vw(0);
+                span {
+                    @include font-15px-R;
+                    margin-right: vw(4);
+                }
+                em {
+                    margin: vw(8);
+                }
+                strong {
+                    @include font-20px-B;
+                }
+            }
+
+            .btns {
+                display: flex;
+                gap: vw(16);
+
+                .ep1 {
+                    color: $white;
+                    @include font-18px-B;
+                    font-family: $font-sub;
+                    width: vw(184);
+                    height: vw(44);
+                    padding: vw(11) vw(26);
+                    background-color: $main1;
+                    border: none;
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                }
+                .all {
+                    color: $main1;
+                    @include font-18px-B;
+                    font-family: $font-sub;
+                    width: vw(164);
+                    height: vw(44);
+                    padding: vw(11) vw(37);
+                    border: none;
+                    background-color: $white;
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    gap: vw(4);
+                }
+            }
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        height: vw(24);
+        position: absolute;
+        top: vw(935);
+
+        .line {
+            display: block;
+            width: vw(1708);
+            height: vw(1);
+            background-color: $white;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .icons {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+
+            a {
+                margin-right: vw(35);
+                color: $white;
+            }
+            a.disabled {
+                opacity: 0.4;
+                cursor: default;
+                pointer-events: auto;
+            }
+            a.disabled svg {
+                filter: grayscale(1);
+            }
+        }
+    }
+}
+
+/* 💥 파티클 애니메이션 */
+@keyframes heart-burst {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.6);
+    }
+}

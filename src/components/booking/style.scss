@@ -1,0 +1,398 @@
+@use '../../styles/base' as *;
+@use '../../styles/utils' as *;
+@use '../../styles/ui/input' as *;
+
+.payment-page {
+    position: relative;
+    .inner {
+        width: vw(1300);
+        height: vw(1000);
+        margin: auto;
+        padding: vw(150) 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        align-items: flex-start;
+        min-height: 100vh;
+        margin-bottom: vw(165);
+        .left {
+            width: vw(924);
+            height: vw(1200);
+            .theme {
+                display: flex;
+                gap: vw(8);
+                li {
+                    color: $white;
+                    padding: vw(6) vw(15);
+                    border-radius: vw(100);
+                    @include font-16px-SB;
+                    text-align: center;
+                    line-height: vw(16);
+                    &.history {
+                        background: $sub4;
+                    }
+                    &.art {
+                        background: $main1;
+                    }
+                    &.healing {
+                        background: $sub3;
+                    }
+                    &.life {
+                        background: #23a33f;
+                    }
+                    &.fusion {
+                        background: $blue;
+                    }
+                    &.making {
+                        background: $sub4;
+                    }
+                    &.cooking {
+                        background: $sub3;
+                    }
+                    &.experience {
+                        background: #23a33f;
+                    }
+                }
+            }
+            .basic-info {
+                margin-bottom: vw(50);
+                h3 {
+                    margin-top: vw(12);
+                    padding-bottom: vw(26);
+                    width: 100%;
+                    border-bottom: 1px solid $sub1;
+                    position: relative;
+                    font-family: $font-sub;
+                    @include font-40px-SB;
+                    .rate {
+                        @include font-18px-B;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $sub3;
+                    }
+                }
+                .details {
+                    margin-top: vw(20);
+                    color: $sub5;
+                    display: flex;
+                    gap: vw(20);
+                    li {
+                        @include font-16px-B;
+                        position: relative;
+                        padding-left: vw(20);
+                        i {
+                            position: absolute;
+                            left: 0;
+                            top: 7%;
+                        }
+                    }
+                }
+            }
+
+            .charge-info {
+                width: vw(655);
+                height: vw(208);
+                span {
+                    @include font-18px;
+                    color: $gray;
+                    display: inline-block;
+                    margin-bottom: vw(5);
+                }
+                p {
+                    @include font-18px-B;
+                    color: $black;
+                    &:first-of-type {
+                        display: block;
+                        margin-bottom: vw(20);
+                    }
+                }
+                em {
+                    @include font-18px;
+                    font-weight: 500;
+                    color: $gray;
+                    display: inline-block;
+                    margin-left: vw(458);
+                }
+                .sum {
+                    width: vw(655);
+                    height: vw(44);
+                    border-top: 1px solid $gray;
+                    @include font-20px-B;
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: vw(15);
+                    margin-top: vw(40);
+                    p {
+                        @include font-20px-B;
+                        color: $main1;
+                    }
+                }
+            }
+
+            .booking-info {
+                margin-top: vw(90);
+                width: vw(520);
+                height: vw(267);
+                strong {
+                    @include font-24px-B;
+                    color: $black;
+                    display: flex;
+                    gap: vw(5);
+                    margin-bottom: vw(20);
+                    span {
+                        @include font-18px-B;
+                        color: $sub3;
+                    }
+                }
+                .user{
+                    label{
+                        display: block;
+                        width: vw(360);
+                        height: vw(60);
+                        @include font-18px;
+                        position: relative;
+                        input[type='text']{
+                            @include inputStyle;
+                        }
+                        &:nth-child(1),
+                        &:nth-child(2),
+                        &:nth-child(3){
+                            display: flex;
+                            justify-content: space-between;
+                            span{
+                                display: block;
+                            }
+                        }
+                        &:nth-child(2){
+                            span{
+                                margin-right: vw(20);
+                            }
+                            div{
+                                margin-right: vw(18);
+                            }
+                            select {
+                                width: vw(55);
+                                border: 1px solid #b1b1b1;
+                                border-radius: vw(4);
+                                height: vw(35);
+                                padding-left: vw(4);
+                                @include font-15px;
+                                margin-right: vw(4);
+                                margin-left: vw(12);
+                        }
+                        input[type='text'] {
+                            width: vw(70);
+                            margin-left: vw(8);
+                            &:not(:last-child) {
+                                margin-right: vw(8);
+                            }
+                        }
+                    }
+                    }
+                    .currentUser{
+                        label{
+                            width: auto;
+                            height: auto;
+                            display: block;
+                            @include font-16px;
+                            input[type="checkbox"]{
+                                margin-left: vw(105);
+                                margin-right: vw(8);
+                        }
+
+                        }
+                    }
+                }
+            }
+
+            .charge {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: vw(20);
+                margin-top: vw(60);
+                strong {
+                    @include font-24px-B;
+                    color: $black;
+                    display: flex;
+                    gap: vw(5);
+                    margin: 0;
+                    span {
+                        @include font-18px-B;
+                        color: $sub3;
+                    }
+                }
+                .selec {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: vw(20);
+                    li {
+                        @include font-18px-SB;
+                        input {
+                            margin-right: vw(5);
+                            accent-color: $sub3;
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            width: vw(550);
+            height: vw(850);
+            border: 2px solid $light-gray;
+            border-radius: vw(20);
+            box-sizing: border-box;
+            padding: vw(30);
+            margin: 0;
+            margin-top: vw(30);
+            .pay-info {
+                margin-top: vw(40);
+                width: vw(460);
+                strong {
+                    @include font-22px-B;
+                    display: inline-block;
+                    margin-bottom: vw(20);
+                }
+                p {
+                    @include font-16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $light-gray;
+                    margin-bottom: vw(10);
+                    em {
+                    }
+                }
+            }
+            .coupon {
+                margin-top: vw(50);
+                height: vw(200);
+                strong {
+                    @include font-22px-B;
+                    display: inline-block;
+                    margin-bottom: vw(20);
+                }
+                span {
+                    @include font-16px;
+                    color: $light-gray;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    margin-bottom: vw(10);
+                    p {
+                        @include font-16px-B;
+                        color: $main1;
+                        margin-left: vw(10);
+                    }
+                }
+                .cpbox {
+                    width: vw(460);
+                    height: vw(40);
+                    border: 2px solid $light-gray;
+                    border-radius: vw(10);
+                    padding: vw(5) vw(20);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: vw(62);
+                    span {
+                        @include font-14px-B;
+                        color: $black;
+                        display: inline-block;
+                        line-height: 1;
+                        margin: 0;
+                    }
+                    p {
+                        @include font-14px-B;
+                        color: $sub3;
+                    }
+                }
+            }
+            .total {
+                width: vw(460);
+                height: vw(50);
+                border-top: 1px solid $light-gray;
+                padding-top: vw(30);
+                margin-bottom: vw(70);
+                strong {
+                    @include font-18px-B;
+                    display: inline-block;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    p {
+                        @include font-18px-B;
+                        color: $main1;
+                        margin: 0;
+                    }
+                }
+                em {
+                    @include font-14px-M;
+                    margin: 0;
+                    display: flex;
+                    justify-content: right;
+                    color: $main1;
+                }
+            }
+            .check {
+                .all {
+                    @include font-16px-B;
+                    color: $black;
+                    margin-bottom: vw(20);
+                    display: flex;
+                    align-items: center;
+                    gap: vw(10);
+                    input[type='checkbox'] {
+                        width: vw(20);
+                        height: vw(20);
+                        border: 3px solid $light-gray;
+                        border-radius: vw(5);
+                        place-items: center;
+                        cursor: pointer;
+                        accent-color: $sub3;
+                    }
+                }
+                li {
+                    @include font-16px-M;
+                    color: $light-gray;
+                    display: flex;
+                    align-items: center;
+                    gap: vw(10);
+                    margin-bottom: vw(7);
+                    input[type='checkbox'] {
+                        width: vw(20);
+                        height: vw(20);
+                        border: 3px solid $light-gray;
+                        border-radius: vw(5);
+                        place-items: center;
+                        cursor: pointer;
+                        accent-color: $sub3;
+                    }
+                }
+                p {
+                    @include font-16px-M;
+                    color: $light-gray;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            button {
+                @include font-20px-B;
+                font-family: 'pretendard';
+                width: vw(460);
+                height: vw(60);
+                background-color: $main1;
+                color: $white;
+                border: none;
+                border-radius: vw(10);
+                margin-top: vw(50);
+                &:hover{
+                    background: #141644;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+export { default as Home } from './home';
+export { default as Brand } from './brand';
+export { default as Booking } from './booking';
+export { default as MyPage } from './mypage';
+export { default as OttMain } from './ottMain';
+export { default as OttSub } from './ottSub';
+export { default as OttDetail } from './ottDetail';
+export { default as TourClass } from './tourclass';
+export { default as TourClassDetail } from './tourclassDetail';
+export { default as NotFiles } from './notfiles';
+export { default as OttSearch } from './ottSearch';
+export { default as TourSearch } from './tourSearch';

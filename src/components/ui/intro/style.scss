@@ -1,0 +1,52 @@
+/* components/ui/intro/style.scss */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    perspective: vw(1200);
+    overflow: hidden;
+    /* Intro 동안 클릭 막고 싶으면 아래 라인 유지, 
+       Intro 중에도 아래 클릭 허용 원하면 pointer-events:none 으로 */
+    pointer-events: auto;
+
+    .intro_video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .doors {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        z-index: 2;
+        pointer-events: none; // 문은 클릭 안 먹게
+    }
+
+    .door {
+        width: 50vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        will-change: transform;
+        backface-visibility: hidden;
+        box-shadow: inset 0 0 vw(40) rgba(0, 0, 0, 0.25);
+    }
+
+    .door-left {
+        background-image: url('/images/door1.png');
+    }
+    .door-right {
+        background-image: url('/images/door2.png');
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-overlay .door {
+        background-position: center;
+    }
+}

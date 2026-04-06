@@ -1,0 +1,161 @@
+@use '../../../styles/base' as *;
+@use '../../../styles/utils' as *;
+
+button {
+    position: relative;
+    background: none;
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: $font-sub;
+    cursor: pointer;
+    &.small {
+        width: vw(120);
+        height: vw(32);
+        @include font-12px-SB;
+        &.main1 {
+            background-image: url('/images/components/button-small-main1.png');
+            color: $main1;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-small-sub3.png');
+            }
+        }
+        &.gray {
+            background-image: url('/images/components/button-small-gray.png');
+            color: gray;
+            &:hover {
+                color: $main1;
+                background-image: url('/images/components/button-small-main1.png');
+            }
+        }
+        &.sub2 {
+            background-image: url('/images/components/button-small-sub2.png');
+            color: $sub2;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-small-sub3.png');
+            }
+        }
+        &.sub3 {
+            background-image: url('/images/components/button-small-sub3.png');
+            color: $sub3;
+            &:hover {
+                color: $main1;
+                background-image: url('/images/components/button-small-main1.png');
+            }
+        }
+        &.white {
+            background-image: url('/images/components/button-small-white.png');
+            color: $white;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-small-sub3.png');
+            }
+        }
+        @media screen and (max-width: 393px) {
+            transform: scale(0.8);
+        }
+    }
+    &.default {
+        width: vw(150);
+        height: vw(40);
+        color: $main1;
+        @include font-15px-SB;
+        &.main1 {
+            background-image: url('/images/components/button-default-main1.png');
+            color: $main1;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-default-sub3.png');
+            }
+        }
+        &.gray {
+            background-image: url('/images/components/button-default-gray.png');
+            color: gray;
+            &:hover {
+                color: $main1;
+                background-image: url('/images/components/button-default-main1.png');
+            }
+        }
+        &.sub2 {
+            background-image: url('/images/components/button-default-sub2.png');
+            color: $sub2;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-default-sub3.png');
+            }
+        }
+        &.sub3 {
+            background-image: url('/images/components/button-default-sub3.png');
+            color: $sub3;
+            &:hover {
+                color: $main1;
+                background-image: url('/images/components/button-default-main1.png');
+            }
+        }
+        &.white {
+            background-image: url('/images/components/button-default-white.png');
+            color: $white;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-default-sub3.png');
+            }
+        }
+        @media screen and (max-width: 393px) {
+            width: 120px;
+            height: 32px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+    &.big {
+        width: vw(188);
+        height: vw(50);
+        color: $white;
+        @include font-18px-SB;
+        &.main1 {
+            background-image: url('/images/components/button-big-main1.png');
+            color: $main1;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-big-sub3.png');
+            }
+        }
+        &.gray {
+            background-image: url('/images/components/button-big-gray.png');
+            color: gray;
+            &:hover {
+                color: $main1;
+                background-image: url('/images/components/button-big-main1.png');
+            }
+        }
+        &.sub2 {
+            background-image: url('/images/components/button-big-sub2.png');
+            color: $sub2;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-big-sub3.png');
+            }
+        }
+        &.sub3 {
+            background-image: url('/images/components/button-big-sub3.png');
+            color: $sub3;
+            &:hover {
+                color: $main1;
+                background-image: url('/images/components/button-big-main1.png');
+            }
+        }
+        &.white {
+            background-image: url('/images/components/button-big-white.png');
+            color: $white;
+            &:hover {
+                color: $sub3;
+                background-image: url('/images/components/button-big-sub3.png');
+            }
+        }
+    }
+    @media screen and (max-width: 393px) {
+        transform: scale(0.8);
+    }
+}

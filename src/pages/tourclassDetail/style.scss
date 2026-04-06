@@ -1,0 +1,178 @@
+@use '../../styles/base' as *;
+@use '../../styles/utils' as *;
+
+.tourclassDetail {
+    position: relative;
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: fixed;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+        width: vw(154);
+        height: vw(67);
+    }
+    &::before {
+        left: vw(40);
+        top: vw(100);
+        background-image: url('/images/tourclass/bg_cloud.png');
+    }
+    &::after {
+        right: vw(40);
+        top: vw(810);
+        background-image: url('/images/tourclass/bg_cloud.png');
+        transform: scaleX(-1);
+    }
+
+    .inner {
+        padding: vw(150) 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        align-items: flex-start;
+        min-height: 100vh;
+        .left {
+            position: sticky;
+            top: vw(150);
+            z-index: 900;
+            .img-wrap {
+                width: vw(598);
+                height: vw(700);
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                &::before {
+                    content: '';
+                    background-image: url('/images/tourclass/tourclassDetail_line.png');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: vw(564);
+                    height: vw(664);
+                    pointer-events: none;
+                    z-index: 1;
+                    opacity: 0.3;
+                }
+                &::after {
+                    content: '';
+                    background-image: url('/images/tourclass/tourclassDetail_line.png');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: vw(564);
+                    height: vw(664);
+                    mix-blend-mode: overlay;
+                    pointer-events: none;
+                    z-index: 2;
+                }
+            }
+        }
+        .right {
+            width: vw(924);
+            height: vw(1200);
+            .theme {
+                display: flex;
+                gap: vw(8);
+                li {
+                    color: $white;
+                    padding: vw(6) vw(15);
+                    border-radius: vw(100);
+                    @include font-16px-SB;
+                    text-align: center;
+                    line-height: vw(16);
+                    &.history {
+                        background: $sub4;
+                    }
+                    &.art {
+                        background: $main1;
+                    }
+                    &.healing {
+                        background: $sub3;
+                    }
+                    &.life {
+                        background: #23a33f;
+                    }
+                    &.fusion {
+                        background: $blue;
+                    }
+                    &.making {
+                        background: $sub4;
+                    }
+                    &.cooking {
+                        background: $sub3;
+                    }
+                    &.experience {
+                        background: #23a33f;
+                    }
+                }
+            }
+            .basic-info {
+                margin-bottom: vw(80);
+                h3 {
+                    margin-top: vw(12);
+                    padding-bottom: vw(26);
+                    width: 100%;
+                    border-bottom: 1px solid $sub1;
+                    position: relative;
+                    font-family: $font-sub;
+                    @include font-40px-SB;
+                    .rate {
+                        @include font-18px-B;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $sub3;
+                    }
+                }
+                .details {
+                    margin-top: vw(20);
+                    color: $sub5;
+                    display: flex;
+                    gap: vw(20);
+                    li {
+                        @include font-16px-B;
+                        position: relative;
+                        padding-left: vw(20);
+                        i {
+                            position: absolute;
+                            left: 0;
+                            top: 7%;
+                        }
+                    }
+                }
+            }
+            .group {
+                position: sticky;
+                height: vw(700);
+                top: vw(150);
+                z-index: 10;
+                .tabs {
+                    li {
+                        color: $sub2;
+                        border-color: $sub2;
+                        font-weight: 600;
+                        &.on {
+                            color: $sub3;
+                            border-color: $sub3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@use './../utils' as *;
+
+#footer {
+    background-color: $main1;
+    width: 100%;
+    position: relative;
+    height: vw(300);
+    &.dark {
+        background-color: #000;
+    }
+    .footer_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: vw(300);
+        background-image: url('/images/footer_bg.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .inner {
+        padding: vw(65) 0 vw(22) 0;
+        height: vw(300);
+    }
+    .top {
+        padding-bottom: vw(20);
+        border-bottom: 1px solid $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        h2 {
+            a {
+                img {
+                    width: vw(170);
+                }
+            }
+        }
+        .policy {
+            display: flex;
+            gap: vw(44);
+            align-items: center;
+            // justify-content: end;
+            li {
+                color: $white;
+                @include font-16px;
+                position: relative;
+                font-weight: 300;
+                &:not(:last-child) {
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 1px;
+                        height: vw(16);
+                        background: $white;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: vw(-23);
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        padding-top: vw(20);
+        .info {
+            display: flex;
+            gap: vw(22);
+            justify-content: end;
+            color: $white;
+            margin-bottom: vw(60);
+            li {
+                @include font-16px;
+                position: relative;
+                font-weight: 300;
+                &:not(:last-child) {
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 1px;
+                        height: vw(16);
+                        background: $white;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: vw(-12);
+                    }
+                }
+            }
+        }
+        .copy {
+            @include font-16px;
+            color: $white;
+            display: flex;
+            justify-content: end;
+            font-weight: 300;
+        }
+    }
+}

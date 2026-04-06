@@ -1,0 +1,102 @@
+// Pretendard
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Light.otf') format('opentype');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Black.otf') format('opentype');
+    font-weight: 900;
+    font-display: swap;
+}
+
+// Aritaburi
+@font-face {
+    font-family: 'Arita buri';
+    src: url('/fonts/AritaBuriKR-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arita buri';
+    src: url('/fonts/AritaBuriKR-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arita buri';
+    src: url('/fonts/AritaBuriKR-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arita buri';
+    src: url('/fonts/AritaBuriKR-HairLine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arita buri';
+    src: url('/fonts/AritaBuriKR-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+$font-main: 'Pretendard';
+$font-sub: 'Arita buri';

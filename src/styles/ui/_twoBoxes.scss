@@ -1,0 +1,92 @@
+@use '../base' as *;
+@use '../utils' as *;
+
+@mixin twoBoxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: vw(35);
+    margin-bottom: vw(150);
+    li {
+        flex-shrink: 0;
+        border-radius: vw(10);
+        width: vw(693);
+        height: vw(320);
+        position: relative; 
+        overflow: hidden;
+        cursor: pointer;
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: 1s;
+        }
+        .grad {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 19.59%, #000 115.78%);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .text {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            strong {
+                color: $white;
+                font-family: $font-sub;
+                display: block;
+                text-align: center;
+                @include font-32px-B;
+            }
+            em {
+                color: $white;
+                @include font-18px;
+            }
+        }
+    }
+    @media screen and (max-width: 393px) {
+        width: 353px;
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: auto;
+        li {
+            width: 353px;
+            height: 180px;
+            border-radius: 10px;
+
+            &:hover {
+                img {
+                }
+            }
+            img {
+            }
+            .grad {
+            }
+            .text {
+                width: 100%;
+                strong {
+                    font-size: 16px;
+                    line-height: 1.4;
+                    margin-bottom: 10px;
+                }
+                em {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use './../utils' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    @include desktop {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    @include tablet {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
