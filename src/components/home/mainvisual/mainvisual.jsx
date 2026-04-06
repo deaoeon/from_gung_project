@@ -10,7 +10,7 @@ const Mainvisual = () => {
     const containerRef = useRef(null);
     const starRefs = useRef([]);
     const navigate = useNavigate();
-
+    
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // ⭐ STAR 순차 애니메이션
